@@ -18,6 +18,7 @@ public abstract class FileCommand extends Command {
     public void execute() {
         try {
             if (!isShutdown()) {
+                sendMessage();
                 performCommand();
             }
         } catch (IOException e) {
@@ -25,6 +26,12 @@ public abstract class FileCommand extends Command {
         } finally {
             cleanUp();
         }
+    }
+
+    private void sendMessage() throws IOException {
+        output.write("Command executing.");
+        output.newLine();
+        output.flush();
     }
 
     private void cleanUp() {
