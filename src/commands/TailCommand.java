@@ -1,5 +1,7 @@
 package commands;
 
+import utilities.BackwardsFileReader;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -18,7 +20,9 @@ public class TailCommand extends FileCommand {
 
     @Override
     public void performCommand() throws IOException {
-
+        System.out.println("Executing tail on " + filePath);
+        openFile();
+        returnCommandOutput();
     }
 
     @Override
