@@ -35,6 +35,7 @@ public class ListCommand extends FileCommand {
         while((line = input.readLine()) != null) {
             output.write(line);
             output.newLine();
+            output.flush();
         }
     }
 

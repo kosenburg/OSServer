@@ -16,12 +16,14 @@ public class RemoveCommand extends FileCommand {
 
     @Override
     public void performCommand() throws IOException {
+        System.out.println("Removing " + filePath);
         Files.delete(Paths.get(filePath));
+
     }
 
     @Override
     public void returnCommandOutput() throws IOException {
-        output.write("File has been deleted");
+        output.write("File has been delete");
         output.newLine();
     }
 
