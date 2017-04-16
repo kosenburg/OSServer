@@ -24,11 +24,17 @@ public abstract class Command {
     public static Command getCommand(String command) {
         if (command.equals("copy")) {
             return new CopyCommand();
-        } else if (command.equals("tail")) { //TODO create tail object
-            return new NullCommand();
+        } else if (command.equals("tail")) {
+            return new TailCommand();
+        } else if (command.equals("ls")) {
+            return new ListCommand();
+        } else if (command.equals("remove")) {
+            return new RemoveCommand();
         } else if (command.equals("shutdown")) { //TODO create shutdown object for server shutdown/cleanup
             return new NullCommand();
-        } else  return new NullCommand();
+        } else {
+            return new NullCommand();
+        }
     }
 
 }
